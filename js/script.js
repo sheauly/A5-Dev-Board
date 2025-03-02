@@ -9,61 +9,50 @@ document.getElementById("button-color").addEventListener("click", function () {
 function updateTask () {
     let taskAssigned = document.getElementById("task-assigned").innerText;
     let task = parseInt(taskAssigned);
-    let completedTask = document.getElementById("Completed-task").innerText;
-    let complete = parseInt(completedTask)
+    let completedTaskBtn = document.getElementById("Completed").innerText;
+    let completed = parseInt(completedTaskBtn)
     if(task>0) {
         task = task-1
-        complete = complete+1;
+        completed = completed+1;
         alert("Board Update Successfully")
     }
     
     document.getElementById("task-assigned").innerText = task
-    document.getElementById("Completed-task").innerText = complete
+    document.getElementById("Completed").innerText = completed 
     if(task===0){
         alert("congrates..!! You Have Compelete All Task")
     }
 }
 
-function addCartItems(butttonId, cartId) {
+function addToCartItems(butttonId, cardId) {
     const button = document.getElementById(butttonId);
     button.addEventListener("click", function () {
         const times = new Date().toLocaleTimeString();
-        const cart1 = document.getElementById(cartId);
-        const newElement = document.createElement("cart-cointainer");
+        const card1 = document.getElementById(cardId);
+        const newElement = document.createElement("card-cointainer");
         updateTask()
-        newElement.textContent = `You have Complete The Task ${cart1.textContent} at : ${times}`;
+        newElement.textContent = `You have Complete The Task ${card1.textContent} at : ${times}`;
         newElement.classList.add(
             "bg-[#F4F7FF]",   
             "p-3",           
             "rounded-lg",    
             "border"        
-              
         );
-        document.getElementById("cart-cointainer").appendChild(newElement);
+        document.getElementById("card-cointainer").appendChild(newElement);
         document.getElementById(butttonId).disabled = true;
-        
-        
     })
 }
-
-
-addCartItems("item-1", "cart-1");
-addCartItems("item-2", "cart-2");
-addCartItems("item-3", "cart-3");
-addCartItems("item-4", "cart-4");
-addCartItems("item-5", "cart-5");
-addCartItems("item-6", "cart-6");
-
-
-
-
+addToCartItems("item-1", "cart-A");
+addToCartItems("item-2", "cart-B");
+addToCartItems("item-3", "cart-C");
+addToCartItems("item-4", "cart-D");
+addToCartItems("item-5", "cart-E");
+addToCartItems("item-6", "cart-F");
 
 document.getElementById("clear-btn").addEventListener("click", function(){
-    document.getElementById("cart-cointainer").innerHTML = "";
+    document.getElementById("card-cointainer").innerHTML = "";
 })
-
-
 const times = new Date();
-const options = { weekday: "long", hour: "numeric", minute: "numeric", second: "numeric", hour12: true };
+const optionsTimes = { weekday: "long", hour: "numeric", minute: "numeric", second: "numeric", hour12: true };
 const now = times.toLocaleString("en-US", options)
 document.getElementById("time").innerText = now
