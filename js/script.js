@@ -49,7 +49,7 @@ addToCartItems("item-4", "cart-D");
 addToCartItems("item-5", "cart-E");
 addToCartItems("item-6", "cart-F");
 
-document.getElementById("clear-btn").addEventListener("click", function(){
+document.getElementById("button").addEventListener("click", function(){
     document.getElementById("card-cointainer").innerHTML = "";
 })
 const times = new Date();
