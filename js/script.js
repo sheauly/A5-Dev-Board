@@ -20,7 +20,7 @@ function updateTask () {
     document.getElementById("task-assigned").innerText = task
     document.getElementById("Completed").innerText = completed 
     if(task===0){
-        alert("congrates..!! You Have Compelete All Task")
+        alert("congrates..!! My assignment is completed in tasks.")
     }
 }
 
@@ -31,7 +31,7 @@ function addToCartItems(butttonId, cardId) {
         const card1 = document.getElementById(cardId);
         const newElement = document.createElement("card-cointainer");
         updateTask()
-        newElement.textContent = `You have Complete The Task ${card1.textContent} at : ${times}`;
+        newElement.textContent = `My assignment is completed in tasks. ${card1.textContent} at : ${times}`;
         newElement.classList.add(
             "bg-[#F4F7FF]",   
             "p-3",           
