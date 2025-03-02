@@ -1,23 +1,23 @@
-const changeColor = ["green", "blue", "#3752FD", "#63f0f4", "#4cb7ba", "#4ca8ba"];
+const changeColor = ["#7C93C3", "#E0E5B6", "purple", "slate","#EFB6C8","#E5D9F2", "#F2E2B1", "#4cb7ba"];
 let index = 0;
 
-document.getElementById("theme-btn").addEventListener("click", function () {
+document.getElementById("button-color").addEventListener("click", function () {
     document.getElementById("body").style.background = changeColor[index];
     index = (index + 1) % changeColor.length
 });
 
 function updateTask () {
-    let taskNum = document.getElementById("task-num").innerText;
-    let task = parseInt(taskNum);
+    let taskAssigned = document.getElementById("task-assigned").innerText;
+    let task = parseInt(taskAssigned);
     let completedTask = document.getElementById("Completed-task").innerText;
     let complete = parseInt(completedTask)
     if(task>0) {
         task = task-1
         complete = complete+1;
-        alert("Bord Update Successfully")
+        alert("Board Update Successfully")
     }
     
-    document.getElementById("task-num").innerText = task
+    document.getElementById("task-assigned").innerText = task
     document.getElementById("Completed-task").innerText = complete
     if(task===0){
         alert("congrates..!! You Have Compelete All Task")
@@ -66,4 +66,4 @@ document.getElementById("clear-btn").addEventListener("click", function(){
 const times = new Date();
 const options = { weekday: "long", hour: "numeric", minute: "numeric", second: "numeric", hour12: true };
 const now = times.toLocaleString("en-US", options)
-document.getElementById("real-time").innerText = now
+document.getElementById("time").innerText = now
