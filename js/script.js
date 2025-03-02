@@ -33,7 +33,7 @@ function addToCartItems(butttonId, cardId) {
         updateTask()
         newElement.textContent = `My assignment is completed in tasks. ${card1.textContent} at : ${times}`;
         newElement.classList.add(
-            "bg-[#F4F7FF]",   
+             "bg-[#F4F7FF]",   
             "p-3",           
             "rounded-lg",    
             "border"        
@@ -55,4 +55,4 @@ document.getElementById("button").addEventListener("click", function(){
 const times = new Date();
 const optionsTimes = { weekday: "long", hour: "numeric", minute: "numeric", second: "numeric", hour12: true };
 const now = times.toLocaleString("en-US", options)
-document.getElementById("time").innerText = now
+document.getElementById("time").innerText=now
